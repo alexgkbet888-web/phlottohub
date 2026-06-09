@@ -1,0 +1,37 @@
+name: Sync PCSO Results
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Manila time is UTC+8. Poll after 2PM, 5PM and 9PM draw windows.
+    - cron: "10,25,40 6,9,13,14 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Sync PCSO official results
+        run: node scripts/sync-pcso.js
+
+      - name: Commit result updates
+        run: |
+          git config user.name "phlottohub-sync"
+          git config user.email "actions@github.com"
+          git add data/results.json
+          if git diff --cached --quiet; then
+            echo "No result changes."
+          else
+            git commit -m "Sync PCSO results"
+            git push
+          fi

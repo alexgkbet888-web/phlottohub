@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="en-PH">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PH Lotto Hub | PCSO Results, Trend Charts and Sports Scores</title>
+    <meta name="description" content="Independent Philippine PCSO lotto results portal with official-result tracking, trend charts, omission statistics, hot and cold numbers, draw videos and verified sports score sources.">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://phlottohub.com/">
+    <meta name="theme-color" content="#124d80">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="PH Lotto Hub | PCSO Results and Trend Charts">
+    <meta property="og:description" content="PCSO lotto results, 500-style trend charts, omission, hot/cold statistics, official draw videos and verified sports source links.">
+    <meta property="og:url" content="https://phlottohub.com/">
+    <link rel="stylesheet" href="styles.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "PH Lotto Hub",
+        "url": "https://phlottohub.com/",
+        "description": "Independent PCSO lotto results, trend charts, history and statistics portal for the Philippine market.",
+        "inLanguage": "en-PH"
+      }
+    </script>
+  </head>
+  <body>
+    <header class="mobile-app-header">
+      <div>
+        <strong id="mobileHeaderTitle">PH Lotto Hub</strong>
+        <span id="mobileToday">Today</span>
+      </div>
+      <button data-route="lottery" id="mobileHeaderAction">Lotto</button>
+    </header>
+
+    <div class="top-strip">
+      <span>Independent PCSO results and trend chart portal</span>
+      <span>Primary lottery source: PCSO Search Lotto Draw Result</span>
+      <span id="topToday">Today: --</span>
+    </div>
+
+    <header class="site-header">
+      <a class="brand" href="#home" data-route="home" aria-label="PH Lotto Hub home">
+        <span class="brand-mark">PH</span>
+        <div>
+          <strong>PH Lotto Hub</strong>
+          <small>PCSO results - trend charts - verified score sources</small>
+        </div>
+      </a>
+      <form class="site-search" action="#lottery">
+        <input type="search" placeholder="Search game, trend chart or score source" aria-label="Search">
+        <button type="submit">Search</button>
+      </form>
+      <div class="header-links">
+        <a href="#sources">Official Sources</a>
+        <a href="#videos">Draw Videos</a>
+      </div>
+    </header>
+
+    <nav class="main-nav" aria-label="Site sections">
+      <a href="#home" data-route="home" class="is-active">Home</a>
+      <a href="#lottery" data-route="lottery">Lotto Results</a>
+      <a href="#basketball" data-route="basketball">Basketball Scores</a>
+      <a href="#football" data-route="football">Football Scores</a>
+      <a href="#sabong" data-route="sabong">Sabong Results</a>
+      <a href="#download" data-route="download">App Download</a>
+    </nav>
+
+    <nav class="mobile-tabbar" aria-label="Mobile primary navigation">
+      <button data-route="home" class="is-active"><i aria-hidden="true"></i><span>Home</span></button>
+      <button data-route="lottery"><i aria-hidden="true"></i><span>Lotto</span></button>
+      <button data-route="basketball"><i aria-hidden="true"></i><span>Basket</span></button>
+      <button data-route="football"><i aria-hidden="true"></i><span>Football</span></button>
+      <button data-route="sabong"><i aria-hidden="true"></i><span>Sabong</span></button>
+      <button data-route="download"><i aria-hidden="true"></i><span>App</span></button>
+    </nav>
+
+    <section class="lottery-dock" aria-label="PCSO lottery game menu">
+      <div class="dock-title">
+        <strong>PCSO Game Menu</strong>
+        <span>Ordered from 2D to 6/58 for fast trend-chart access.</span>
+      </div>
+      <nav class="game-nav" id="gameNav" aria-label="PCSO lottery games"></nav>
+    </section>
+
+    <main>
+      <section class="page-panel is-active" data-page="home" id="home">
+        <section class="mobile-home-live" aria-label="Latest official lottery results">
+          <div class="mobile-section-title">
+            <div>
+              <span>PCSO official sync</span>
+              <strong>Latest Draws</strong>
+            </div>
+            <button data-route="lottery">View all</button>
+          </div>
+          <div class="mobile-home-latest" id="mobileHomeLatest"></div>
+        </section>
+
+        <section class="mobile-tool-strip" aria-label="Popular trend tools">
+          <div class="mobile-section-title compact">
+            <div>
+              <span>Trend tools</span>
+              <strong>Popular Charts</strong>
+            </div>
+          </div>
+          <div class="mobile-tool-grid">
+            <button data-route="lottery" data-series="2D-2PM"><strong>2D Trend</strong><span>2PM basic chart</span></button>
+            <button data-route="lottery" data-series="3D-9PM"><strong>3D Hot/Cold</strong><span>9PM omissions</span></button>
+            <button data-route="lottery" data-series="6-58"><strong>6/58 Watch</strong><span>Jackpot trend</span></button>
+          </div>
+        </section>
+
+        <section class="portal-hero">
+          <div>
+            <p class="crumb">Philippines lottery intelligence center</p>
+            <h1>Philippine PCSO Results & Trend Charts</h1>
+            <p class="hero-copy">
+              Official-result tracking, 2D/3D multi-session charts, jackpot games, omission,
+              hot/cold numbers, history and draw video references for the Philippine market.
+            </p>
+            <div class="status-bar" id="siteStatus"></div>
+            <div class="trust-rail" id="trustRail"></div>
+          </div>
+          <aside class="hero-card">
+            <strong>Operating Rule</strong>
+            <span>Unpublished PCSO results are never filled with guessed numbers.</span>
+            <span>Sports pages show official or authorized sources until a licensed score feed is connected.</span>
+          </aside>
+        </section>
+
+        <section class="home-kpi-strip" id="homeKpis" aria-label="Portal status metrics"></section>
+
+        <section class="home-entry-grid" aria-label="Portal modules">
+          <button class="route-card primary" data-route="home">
+            <span class="route-icon">H</span>
+            <strong>Home</strong>
+            <span>Philippine lottery and sports information portal overview.</span>
+          </button>
+          <button class="route-card" data-route="lottery">
+            <span class="route-icon">L</span>
+            <strong>Lotto Results</strong>
+            <span>Latest PCSO draws, schedule, jackpot watch and recent history.</span>
+          </button>
+          <button class="route-card" data-route="basketball">
+            <span class="route-icon">B</span>
+            <strong>Basketball Scores</strong>
+            <span>Official NBA/FIBA sources and room for licensed local score feeds.</span>
+          </button>
+          <button class="route-card" data-route="football">
+            <span class="route-icon">F</span>
+            <strong>Football Scores</strong>
+            <span>FIFA, UEFA and Premier League official match source links.</span>
+          </button>
+          <button class="route-card" data-route="sabong">
+            <span class="route-icon">S</span>
+            <strong>Sabong Results</strong>
+            <span>Reserved for authorized event feeds and compliant result display.</span>
+          </button>
+          <button class="route-card" data-route="download">
+            <span class="route-icon">APP</span>
+            <strong>App Download</strong>
+            <span>Mobile H5 first, Android and iOS distribution prepared for rollout.</span>
+          </button>
+        </section>
+
+        <section class="portal-dashboard" aria-label="Homepage data dashboard">
+          <article class="info-panel">
+            <div class="panel-title">
+              <div>
+                <p class="crumb">Official result board</p>
+                <h2>Latest PCSO Draws</h2>
+              </div>
+              <button class="panel-action" data-route="lottery">Open Lotto Center</button>
+            </div>
+            <div class="home-latest-board" id="homeLatestBoard"></div>
+          </article>
+          <article class="info-panel">
+            <div class="panel-title">
+              <div>
+                <p class="crumb">Operations coverage</p>
+                <h2>Market Modules</h2>
+              </div>
+              <span>Built as a portal, not a single static chart page.</span>
+            </div>
+            <div class="coverage-list">
+              <span><strong>PCSO Lotto</strong> Results, trend charts, omissions, hot/cold, history and videos.</span>
+              <span><strong>Sports Scores</strong> Official basketball and football source hubs until licensed feeds are connected.</span>
+              <span><strong>Sabong</strong> Authorized-event result display only, with no betting or odds content.</span>
+            </div>
+          </article>
+        </section>
+
+        <section class="source-grid" id="sources">
+          <article class="info-panel">
+            <div class="panel-title">
+              <div>
+                <p class="crumb">Market gap</p>
+                <h2>Philippine Competitor Map</h2>
+              </div>
+              <span>Result sites exist; professional web trend charts are still weak.</span>
+            </div>
+            <div class="competitor-list">
+              <a href="https://www.pcso.gov.ph/SearchLottoResult.aspx" target="_blank" rel="noreferrer"><strong>PCSO Official</strong><span>Authority source, weak charting and SEO UX.</span></a>
+              <a href="https://www.lottopcso.com/swertres-results-history-and-summary-year-2024/" target="_blank" rel="noreferrer"><strong>LottoPCSO</strong><span>Strong history and SEO, article/table-first experience.</span></a>
+              <a href="https://www.pcsogames.com/lotto-result/" target="_blank" rel="noreferrer"><strong>PCSOGames</strong><span>Broad result coverage, not a deep trend chart product.</span></a>
+              <a href="https://dailypcsoresults.com/" target="_blank" rel="noreferrer"><strong>DailyPCSOResults</strong><span>History, hot/cold and predictor ideas, less polished analytics UX.</span></a>
+              <a href="https://www.pinoylotto.com/" target="_blank" rel="noreferrer"><strong>Pinoy Lotto</strong><span>App and notifications, less focused on web SEO trend pages.</span></a>
+              <a href="https://lottobot.ai/lotto-6-42/hot-and-cold-numbers" target="_blank" rel="noreferrer"><strong>LottoBot</strong><span>Hot/cold concept, not a complete Philippines lotto portal.</span></a>
+            </div>
+          </article>
+          <article class="info-panel">
+            <div class="panel-title">
+              <h2>Official Data Policy</h2>
+              <span>What the site will and will not publish</span>
+            </div>
+            <p class="text-block">Lottery numbers come from PCSO public results and verified historical references. Sports modules use official league bodies or licensed APIs only. Placeholder scores are not shown as real scores.</p>
+            <div class="link-list">
+              <a href="https://www.pcso.gov.ph/SearchLottoResult.aspx" target="_blank" rel="noreferrer">PCSO Result Search</a>
+              <a href="https://www.youtube.com/channel/UCpOm2kv1upnIFoOT7rSp6hg/videos" target="_blank" rel="noreferrer">PCSO YouTube Channel</a>
+            </div>
+          </article>
+        </section>
+
+        <section class="editorial-grid" aria-label="Editorial and operations content">
+          <article class="info-panel">
+            <div class="panel-title">
+              <div>
+                <p class="crumb">Why users return</p>
+                <h2>Daily Reference Workflow</h2>
+              </div>
+              <span>Designed for repeat mobile usage.</span>
+            </div>
+            <div class="workflow-steps">
+              <span><b>1</b><strong>Check official result</strong><small>Latest PCSO draw rows, no unpublished numbers.</small></span>
+              <span><b>2</b><strong>Open trend chart</strong><small>Horizontal matrix, omission values and trend lines.</small></span>
+              <span><b>3</b><strong>Review history</strong><small>Recent draw archive and source labels.</small></span>
+              <span><b>4</b><strong>Follow scores</strong><small>Sports source hubs until licensed live feeds are connected.</small></span>
+            </div>
+          </article>
+          <article class="info-panel">
+            <div class="panel-title">
+              <div>
+                <p class="crumb">SEO content map</p>
+                <h2>Launch Pages</h2>
+              </div>
+              <span>Prepared for a full portal rollout.</span>
+            </div>
+            <div class="launch-list">
+              <span>PCSO result today</span>
+              <span>2D Lotto result and trend chart</span>
+              <span>3D Lotto history and hot/cold numbers</span>
+              <span>Grand Lotto and Ultra Lotto jackpot watch</span>
+              <span>Official draw video archive</span>
+              <span>Basketball and football score source pages</span>
+            </div>
+          </article>
+        </section>
+      </section>
+
+      <section class="page-panel" data-page="lottery" id="lottery">
+        <section class="mobile-lottery-hero">
+          <p>PCSO Trend Center</p>
+          <h1>Lotto Results</h1>
+          <div class="mobile-hero-actions">
+            <button data-scroll-target="trend">Trend Chart</button>
+            <button data-scroll-target="official">Results</button>
+            <button data-scroll-target="history">History</button>
+          </div>
+        </section>
+
+        <section class="mobile-lotto-app" aria-label="Mobile lotto trend app">
+          <div class="mobile-lotto-card">
+            <div>
+              <span>Selected game</span>
+              <strong id="mobileGameName">2D Lotto 2PM</strong>
+              <small id="mobileGameMeta">Official records</small>
+            </div>
+            <div class="mobile-latest-balls" id="mobileLatestBalls"></div>
+          </div>
+          <div class="mobile-session-strip" id="mobileSessionStrip" aria-label="Mobile draw session selector"></div>
+          <div class="mobile-mode-strip" id="mobileModeStrip" aria-label="Mobile trend mode selector"></div>
+          <div class="mobile-range-strip" aria-label="Mobile draw range selector">
+            <button data-mobile-window="30" class="is-active">30 draws</button>
+            <button data-mobile-window="50">50 draws</button>
+            <button data-mobile-window="100">100 draws</button>
+          </div>
+          <section class="mobile-trend-app-board" id="mobileTrendApp">
+            <div class="mobile-board-title">
+              <div>
+                <span>Swipe trend board</span>
+                <strong id="mobileTrendTitle">Basic Trend</strong>
+              </div>
+              <small id="mobileTrendMeta">Official data only</small>
+            </div>
+            <div class="mobile-trend-canvas" id="mobileTrendBoard"></div>
+          </section>
+          <div class="mobile-stat-strip" id="mobileStatStrip"></div>
+        </section>
+
+        <section class="page-head">
+          <p class="crumb">Lotto result center</p>
+          <h1>Lotto Results</h1>
+          <p>Latest official PCSO records, draw publication status, trend charts, jackpot watch, schedule and recent history for the selected game.</p>
+        </section>
+
+        <section class="chart-shell" id="trend">
+          <div class="chart-titlebar">
+            <div>
+              <p class="crumb">PCSO Trend Charts &gt; <span id="crumbGame">2D Lotto</span> &gt; Basic Trend</p>
+              <h1 id="chartHeading">2D Lotto Basic Trend With Lines</h1>
+            </div>
+            <div class="latest-pill" id="latestPill"></div>
+          </div>
+
+          <div class="time-switcher" id="drawTimeSwitcher" aria-label="Draw time selector"></div>
+          <nav class="trend-nav" aria-label="Trend chart types">
+            <button class="trend-tab is-active" data-view="basic">Basic Trend</button>
+            <button class="trend-tab" data-view="oddEven">Odd/Even</button>
+            <button class="trend-tab" data-view="bigSmall">Big/Small</button>
+            <button class="trend-tab" data-view="sum">Sum</button>
+            <button class="trend-tab" data-view="span">Span</button>
+            <button class="trend-tab" data-view="tail">Tail</button>
+            <button class="trend-tab" data-view="zone">Zone</button>
+            <button class="trend-tab" data-view="hotCold">Hot/Cold</button>
+          </nav>
+
+          <div class="toolbar">
+            <div class="quick-range" role="group" aria-label="Draw window">
+              <span>Draw window:</span>
+              <button class="range-button" data-window="30">Last 30</button>
+              <button class="range-button" data-window="50">Last 50</button>
+              <button class="range-button is-active" data-window="100">Last 100</button>
+            </div>
+            <label class="field">
+              <span>From date</span>
+              <input id="fromIssue" type="text" value="" inputmode="numeric">
+            </label>
+            <label class="field">
+              <span>To date</span>
+              <input id="toIssue" type="text" value="" inputmode="numeric">
+            </label>
+            <button class="query-button" id="queryButton">Query</button>
+            <div class="mark-options" role="group" aria-label="Chart display options">
+              <label><input id="showOmission" type="checkbox" checked> Omission</label>
+              <label><input id="showLines" type="checkbox" checked> Lines</label>
+              <label><input id="highlightRepeat" type="checkbox" checked> Repeats</label>
+            </div>
+          </div>
+
+          <div class="sub-toolbar">
+            <span id="drawMeta">Loading official records...</span>
+            <span>Lottery source: PCSO public result page + verified historical backfill.</span>
+            <span>No result is displayed until an official or verified source publishes it.</span>
+          </div>
+
+          <section class="mobile-chart-panel" aria-label="Mobile trend summary">
+            <div class="mobile-chart-title">
+              <strong>Mobile Trend Snapshot</strong>
+              <span>Latest rows first. Use desktop or tablet for the full matrix view.</span>
+            </div>
+            <div class="mobile-chart-list" id="mobileChartList"></div>
+          </section>
+
+          <section class="chart-panel" aria-label="Trend chart">
+            <div class="chart-scroll" id="chartScroll">
+              <div class="trend-stage" id="trendStage">
+                <svg class="position-lines" id="positionLines" aria-hidden="true"></svg>
+                <table class="matrix-table" id="matrixTable"></table>
+              </div>
+            </div>
+          </section>
+
+          <section class="legend-row" aria-label="Legend">
+            <span><i class="legend-dot hit-dot"></i>Hit number</span>
+            <span><i class="legend-dot repeat-dot"></i>Repeat</span>
+            <span><i class="legend-line"></i>Trend line</span>
+            <span>Gray values are omission counts.</span>
+          </section>
+        </section>
+
+        <section class="home-grid" id="official">
+          <article class="info-panel official-panel">
+            <div class="panel-title">
+              <div>
+                <p class="crumb">Latest official draw results</p>
+                <h2>PCSO Lotto Results</h2>
+              </div>
+              <span>Click a game to open its trend chart.</span>
+            </div>
+            <div class="official-results" id="officialResults"></div>
+          </article>
+          <article class="info-panel today-panel">
+            <div class="panel-title">
+              <div>
+                <p class="crumb">Today monitor</p>
+                <h2>Draw Publication Status</h2>
+              </div>
+              <span>Based on official PCSO availability.</span>
+            </div>
+            <div class="today-cards" id="todayCards"></div>
+          </article>
+        </section>
+
+        <section class="analysis-grid" id="stats">
+          <article class="info-panel">
+            <h2>Selected Game Result</h2>
+            <div id="latestResult" class="latest-result"></div>
+          </article>
+          <article class="info-panel">
+            <h2>Hot and Cold Numbers</h2>
+            <div id="hotColdPanel"></div>
+          </article>
+          <article class="info-panel">
+            <h2>Current Omission Top 10</h2>
+            <div id="overduePanel"></div>
+          </article>
+        </section>
+
+        <section class="content-grid">
+          <article class="info-panel">
+            <div class="panel-title">
+              <h2>Popular Trend Charts</h2>
+              <span>High-intent SEO entrances</span>
+            </div>
+            <div class="link-grid" id="popularCharts"></div>
+          </article>
+          <article class="info-panel">
+            <div class="panel-title">
+              <h2>Jackpot Watch</h2>
+              <span>Latest official jackpot ranking</span>
+            </div>
+            <div class="jackpot-list" id="jackpotWatch"></div>
+          </article>
+          <article class="info-panel">
+            <div class="panel-title">
+              <h2>Data Tools</h2>
+              <span>Planned utility set</span>
+            </div>
+            <div class="tool-list">
+              <button>Number Checker</button>
+              <button>Distribution</button>
+              <button>Omission Rank</button>
+              <button>Draw Alerts</button>
+            </div>
+          </article>
+        </section>
+
+        <section class="ops-grid">
+          <article class="info-panel">
+            <h2>PCSO Draw Schedule</h2>
+            <div class="schedule-table">
+              <div><strong>Daily</strong><span>2D / 3D: 2PM, 5PM, 9PM</span></div>
+              <div><strong>Mon / Wed / Fri</strong><span>4D, Mega Lotto 6/45</span></div>
+              <div><strong>Tue / Thu / Sat</strong><span>6D, Lotto 6/42</span></div>
+              <div><strong>Tue / Thu / Sun</strong><span>Super Lotto 6/49</span></div>
+              <div><strong>Mon / Wed / Sat</strong><span>Grand Lotto 6/55</span></div>
+              <div><strong>Tue / Fri / Sun</strong><span>Ultra Lotto 6/58</span></div>
+            </div>
+          </article>
+          <article class="info-panel video-panel" id="videos">
+            <div class="panel-title">
+              <h2>Official Draw Videos</h2>
+              <a href="https://www.youtube.com/channel/UCpOm2kv1upnIFoOT7rSp6hg/videos" target="_blank" rel="noreferrer">PCSO YouTube</a>
+            </div>
+            <div class="video-list" id="videoList"></div>
+          </article>
+        </section>
+
+        <section class="history-section info-panel" id="history">
+          <div class="panel-title">
+            <h2>Recent Draw History</h2>
+            <span id="historyLabel"></span>
+          </div>
+          <div class="table-wrap">
+            <table class="history-table" id="historyTable"></table>
+          </div>
+        </section>
+      </section>
+
+      <section class="page-panel" data-page="basketball" id="basketball">
+        <section class="mobile-channel-shell">
+          <div class="mobile-channel-hero basketball-tone">
+            <span>Basketball center</span>
+            <strong>Official Score Sources</strong>
+            <small>NBA, FIBA and future licensed Philippine feeds.</small>
+          </div>
+          <div class="mobile-channel-actions">
+            <a href="https://www.nba.com/scores" target="_blank" rel="noreferrer">NBA Scores</a>
+            <a href="https://www.fiba.basketball/en/events" target="_blank" rel="noreferrer">FIBA Events</a>
+          </div>
+          <div class="mobile-status-grid">
+            <span><strong>Live feed</strong><small>Licensed API required</small></span>
+            <span><strong>Policy</strong><small>No fake scores</small></span>
+          </div>
+        </section>
+        <section class="page-head">
+          <p class="crumb">Sports score center</p>
+          <h1>Basketball Scores</h1>
+          <p>Official NBA and FIBA sources are shown now. A licensed local basketball data feed should be connected before publishing live PBA or Philippines league scores.</p>
+        </section>
+        <section class="score-ops-grid">
+          <article><strong>Feed status</strong><span>Official links active; licensed live-score provider pending.</span></article>
+          <article><strong>Coverage target</strong><span>NBA, FIBA, PBA and Philippine local events after data licensing.</span></article>
+          <article><strong>Publishing rule</strong><span>No placeholder scores are displayed as real match scores.</span></article>
+        </section>
+        <article class="score-panel full-score-panel">
+          <div class="score-heading">
+            <div class="score-icon">BK</div>
+            <div>
+              <h3>Basketball Source Hub</h3>
+              <p>Official or licensed data only.</p>
+            </div>
+          </div>
+          <div class="score-list" id="basketballScores"></div>
+        </article>
+      </section>
+
+      <section class="page-panel" data-page="football" id="football">
+        <section class="mobile-channel-shell">
+          <div class="mobile-channel-hero football-tone">
+            <span>Football center</span>
+            <strong>Match Source Hub</strong>
+            <small>FIFA, UEFA, Premier League and future licensed feeds.</small>
+          </div>
+          <div class="mobile-channel-actions">
+            <a href="https://www.fifa.com/en/match-centre" target="_blank" rel="noreferrer">FIFA</a>
+            <a href="https://www.uefa.com/uefachampionsleague/fixtures-results/" target="_blank" rel="noreferrer">UEFA</a>
+            <a href="https://www.premierleague.com/fixtures" target="_blank" rel="noreferrer">EPL</a>
+          </div>
+          <div class="mobile-status-grid">
+            <span><strong>Coverage</strong><small>Global + PH football</small></span>
+            <span><strong>Data rule</strong><small>Official or licensed</small></span>
+          </div>
+        </section>
+        <section class="page-head">
+          <p class="crumb">Sports score center</p>
+          <h1>Football Scores</h1>
+          <p>Reference FIFA, UEFA and Premier League official match sources first; add a licensed feed for real-time match data.</p>
+        </section>
+        <section class="score-ops-grid">
+          <article><strong>Feed status</strong><span>Official match centers linked; live feed integration pending.</span></article>
+          <article><strong>Coverage target</strong><span>FIFA, UEFA, Premier League and Philippine football fixtures.</span></article>
+          <article><strong>Publishing rule</strong><span>Fixtures and scores must come from official or licensed sources.</span></article>
+        </section>
+        <article class="score-panel full-score-panel">
+          <div class="score-heading">
+            <div class="score-icon">FB</div>
+            <div>
+              <h3>Football Source Hub</h3>
+              <p>Official match centers and fixtures.</p>
+            </div>
+          </div>
+          <div class="score-list" id="footballScores"></div>
+        </article>
+      </section>
+
+      <section class="page-panel" data-page="sabong" id="sabong">
+        <section class="mobile-channel-shell">
+          <div class="mobile-channel-hero sabong-tone">
+            <span>Event result center</span>
+            <strong>Authorized Results Only</strong>
+            <small>Prepared for compliant legal event feeds.</small>
+          </div>
+          <div class="mobile-status-grid">
+            <span><strong>Feed status</strong><small>Source required</small></span>
+            <span><strong>Display rule</strong><small>No odds or betting links</small></span>
+          </div>
+        </section>
+        <section class="page-head">
+          <p class="crumb">Event result center</p>
+          <h1>Sabong Results</h1>
+          <p>This page is prepared for authorized event feeds only. It should not publish odds, betting links or unverified event claims.</p>
+        </section>
+        <section class="score-ops-grid">
+          <article><strong>Feed status</strong><span>Awaiting authorized legal result source.</span></article>
+          <article><strong>Coverage target</strong><span>Verified event result display and venue/source labeling.</span></article>
+          <article><strong>Publishing rule</strong><span>No betting, odds, or unverified event claims.</span></article>
+        </section>
+        <article class="score-panel full-score-panel">
+          <div class="score-heading">
+            <div class="score-icon">PH</div>
+            <div>
+              <h3>Authorized Sabong Feed</h3>
+              <p>Legal and source-reviewed result display.</p>
+            </div>
+          </div>
+          <div class="score-list" id="sabongScores"></div>
+        </article>
+      </section>
+
+      <section class="page-panel" data-page="download" id="download">
+        <section class="mobile-channel-shell app-tone-shell">
+          <div class="mobile-channel-hero app-tone">
+            <span>Mobile access</span>
+            <strong>Install PH Lotto Hub</strong>
+            <small>H5 now, native wrapper roadmap ready.</small>
+          </div>
+          <div class="mobile-status-grid">
+            <span><strong>H5</strong><small>Ready for mobile browser</small></span>
+            <span><strong>App</strong><small>Android and iOS roadmap</small></span>
+          </div>
+        </section>
+        <section class="page-head">
+          <p class="crumb">Mobile access</p>
+          <h1>App Download</h1>
+          <p>The current web app is H5-ready for mobile browsers and App WebView. Native download buttons are reserved for Android package and iOS guide rollout.</p>
+        </section>
+        <section class="app-grid">
+          <article class="info-panel app-card">
+            <span class="route-icon">H5</span>
+            <strong>H5 Mobile Web</strong>
+            <span>Responsive pages, horizontal chart handling and touch-friendly navigation.</span>
+            <button data-route="home">Open H5 Home</button>
+          </article>
+          <article class="info-panel app-card">
+            <span class="route-icon">APK</span>
+            <strong>Android Package</strong>
+            <span>Future wrapper app with push alerts and saved number lists.</span>
+            <button>Android Waitlist</button>
+          </article>
+          <article class="info-panel app-card">
+            <span class="route-icon">iOS</span>
+            <strong>iOS Guide</strong>
+            <span>Install guide for Home Screen and future iOS distribution path.</span>
+            <button>iOS Guide</button>
+          </article>
+        </section>
+        <section class="app-feature-panel info-panel">
+          <div class="panel-title">
+            <div>
+              <p class="crumb">Mobile product plan</p>
+              <h2>App Experience Roadmap</h2>
+            </div>
+            <span>H5 first, native wrappers later.</span>
+          </div>
+          <div class="app-feature-grid">
+            <span><strong>Trend chart on mobile</strong><small>Swipeable matrix with sticky result columns.</small></span>
+            <span><strong>Result alerts</strong><small>Push notifications after official PCSO publication.</small></span>
+            <span><strong>Saved games</strong><small>Pin 2D, 3D and jackpot games to the first screen.</small></span>
+            <span><strong>Offline archive</strong><small>Cache recent history for faster repeat visits.</small></span>
+          </div>
+        </section>
+      </section>
+
+      <section class="roadmap info-panel">
+        <h2>Product Roadmap</h2>
+        <div class="roadmap-cols">
+          <div>
+            <h3>Phase 1</h3>
+            <p>Official PCSO results, 2D/3D multi-session charts, omission, hot/cold, sum, span, odd/even and big/small views.</p>
+          </div>
+          <div>
+            <h3>Phase 2</h3>
+            <p>Static SEO route generation for each game, date archive, history page and trend chart page.</p>
+          </div>
+          <div>
+            <h3>Phase 3</h3>
+            <p>Licensed sports feeds, alert subscriptions, advanced member charts, API access and admin data review.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="disclaimer">
+        <strong>Disclaimer:</strong>
+        PH Lotto Hub is an independent information and statistics platform. It is not affiliated with, endorsed by,
+        or operated by PCSO. We do not sell lottery tickets, accept bets, process wagers, or guarantee predictions.
+        Trend charts and omission values are historical references only.
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
