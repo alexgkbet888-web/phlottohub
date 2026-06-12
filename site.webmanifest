@@ -1,0 +1,11 @@
+{
+  "name": "PH Lotto Hub",
+  "short_name": "PH Lotto",
+  "description": "Philippine PCSO lotto results, trend charts and verified score source portal.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#eef3f8",
+  "theme_color": "#124d80",
+  "lang": "en-PH"
+}

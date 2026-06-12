@@ -84,6 +84,25 @@ function dateInManila(date = new Date()) {
 
 const currentDate = dateInManila();
 let syncedUpdatedAt = null;
+let lastTrackedRoute = null;
+
+function trackEvent(name, params = {}) {
+  if (typeof window.phTrack === "function") {
+    window.phTrack(name, params);
+  }
+}
+
+function trackRouteView(route) {
+  const key = `${route}:${window.location.pathname}${window.location.hash || ""}`;
+  if (lastTrackedRoute === key) return;
+  lastTrackedRoute = key;
+  if (typeof window.phPageView === "function") {
+    window.phPageView(route, {
+      series_code: state.seriesCode,
+      trend_view: state.view
+    });
+  }
+}
 
 const officialRows = [
   ["6-58", "2026-06-07", "9PM", [53, 1, 4, 45, 51, 22], 75000000, 0],
@@ -990,6 +1009,7 @@ function setRoute(route, options = {}) {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
   requestAnimationFrame(drawPositionLines);
+  trackRouteView(nextRoute);
 }
 
 function renderMobileChrome(route) {
@@ -1256,6 +1276,12 @@ function selectSeries(code, options = {}) {
   state.seriesCode = code;
   state.customFrom = null;
   state.customTo = null;
+  const selected = drawSeries.find((item) => item.code === code);
+  trackEvent("lotto_series_select", {
+    series_code: code,
+    series_name: selected?.name || code,
+    family: selected?.family || ""
+  });
   renderAll();
   if (options.openLottery !== false) {
     setRoute("lottery", { push: true, scroll: false });
@@ -1280,6 +1306,8 @@ function bindEvents() {
   });
   document.querySelector(".site-search")?.addEventListener("submit", (event) => {
     event.preventDefault();
+    const query = event.currentTarget.querySelector("input")?.value.trim() || "";
+    trackEvent("site_search", { search_term: query });
     setRoute("lottery");
   });
   document.querySelectorAll("[data-scroll-target]").forEach((item) => {
@@ -1325,6 +1353,11 @@ function bindEvents() {
     const button = event.target.closest("[data-mobile-view]");
     if (!button) return;
     state.view = button.dataset.mobileView;
+    trackEvent("trend_view_change", {
+      source: "mobile",
+      trend_view: state.view,
+      series_code: state.seriesCode
+    });
     renderAll();
   });
   document.querySelectorAll("[data-mobile-window]").forEach((button) => {
@@ -1332,6 +1365,11 @@ function bindEvents() {
       state.windowSize = Number(button.dataset.mobileWindow);
       state.customFrom = null;
       state.customTo = null;
+      trackEvent("trend_window_change", {
+        source: "mobile",
+        window_size: state.windowSize,
+        series_code: state.seriesCode
+      });
       renderAll();
     });
   });
@@ -1342,6 +1380,11 @@ function bindEvents() {
       state.windowSize = Number(button.dataset.window);
       state.customFrom = null;
       state.customTo = null;
+      trackEvent("trend_window_change", {
+        source: "desktop",
+        window_size: state.windowSize,
+        series_code: state.seriesCode
+      });
       renderAll();
     });
   });
@@ -1353,12 +1396,22 @@ function bindEvents() {
       state.customFrom = from;
       state.customTo = to;
       document.querySelectorAll(".range-button").forEach((item) => item.classList.remove("is-active"));
+      trackEvent("trend_custom_range_query", {
+        series_code: state.seriesCode,
+        from_date: from,
+        to_date: to
+      });
       renderAll();
     }
   });
   document.querySelectorAll(".trend-tab").forEach((button) => {
     button.addEventListener("click", () => {
       state.view = button.dataset.view;
+      trackEvent("trend_view_change", {
+        source: "desktop",
+        trend_view: state.view,
+        series_code: state.seriesCode
+      });
       renderHeader();
       renderTrendTabs();
       renderMatrix();
@@ -1366,15 +1419,28 @@ function bindEvents() {
   });
   document.querySelector("#showOmission").addEventListener("change", (event) => {
     state.showOmission = event.target.checked;
+    trackEvent("chart_option_toggle", { option: "omission", enabled: state.showOmission });
     renderMatrix();
   });
   document.querySelector("#showLines").addEventListener("change", (event) => {
     state.showLines = event.target.checked;
+    trackEvent("chart_option_toggle", { option: "lines", enabled: state.showLines });
     drawPositionLines();
   });
   document.querySelector("#highlightRepeat").addEventListener("change", (event) => {
     state.highlightRepeat = event.target.checked;
+    trackEvent("chart_option_toggle", { option: "repeat", enabled: state.highlightRepeat });
     renderMatrix();
+  });
+  document.addEventListener("click", (event) => {
+    const link = event.target.closest("a[href]");
+    if (!link) return;
+    const url = new URL(link.href, window.location.href);
+    if (url.hostname === window.location.hostname) return;
+    trackEvent("outbound_link_click", {
+      link_url: url.href,
+      link_text: link.textContent.trim().slice(0, 80)
+    });
   });
   document.querySelector("#chartScroll").addEventListener("scroll", drawPositionLines);
   window.addEventListener("resize", drawPositionLines);
