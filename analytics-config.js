@@ -3,7 +3,7 @@ window.PH_LOTTO_ANALYTICS = {
 
   // Paste the GA4 Measurement ID here after creating the Web data stream.
   // Example format: "G-XXXXXXXXXX"
-  ga4MeasurementId: "",
+  ga4MeasurementId: "G-Z6CP2NDZDX",
 
   // Paste the Microsoft Clarity Project ID here after creating the project.
   clarityProjectId: "",
