@@ -1,7 +1,7 @@
 {
   "source": "PCSO Search Lotto Draw Result by Date",
   "sourceUrl": "https://www.pcso.gov.ph/SearchLottoResult.aspx",
-  "updatedAt": "2026-09-11T16:59:56.318Z",
+  "updatedAt": "2026-09-12T16:13:02.855Z",
   "records": [
     {
       "id": "2D-2PM-2026-06-05-2PM",
@@ -14762,6 +14762,156 @@
         34
       ],
       "jackpot": 285829261.94,
+      "winners": 0,
+      "sourceLabel": "PCSO Official Auto Sync",
+      "sourceUrl": "https://www.pcso.gov.ph/SearchLottoResult.aspx",
+      "status": "official"
+    },
+    {
+      "id": "2D-2PM-2026-09-12-2PM",
+      "seriesCode": "2D-2PM",
+      "drawDate": "2026-09-12",
+      "drawTime": "2PM",
+      "numbers": [
+        1,
+        24
+      ],
+      "jackpot": 4000,
+      "winners": 71,
+      "sourceLabel": "PCSO Official Auto Sync",
+      "sourceUrl": "https://www.pcso.gov.ph/SearchLottoResult.aspx",
+      "status": "official"
+    },
+    {
+      "id": "3D-2PM-2026-09-12-2PM",
+      "seriesCode": "3D-2PM",
+      "drawDate": "2026-09-12",
+      "drawTime": "2PM",
+      "numbers": [
+        1,
+        7,
+        2
+      ],
+      "jackpot": 4500,
+      "winners": 175,
+      "sourceLabel": "PCSO Official Auto Sync",
+      "sourceUrl": "https://www.pcso.gov.ph/SearchLottoResult.aspx",
+      "status": "official"
+    },
+    {
+      "id": "2D-5PM-2026-09-12-5PM",
+      "seriesCode": "2D-5PM",
+      "drawDate": "2026-09-12",
+      "drawTime": "5PM",
+      "numbers": [
+        2,
+        19
+      ],
+      "jackpot": 4000,
+      "winners": 172,
+      "sourceLabel": "PCSO Official Auto Sync",
+      "sourceUrl": "https://www.pcso.gov.ph/SearchLottoResult.aspx",
+      "status": "official"
+    },
+    {
+      "id": "3D-5PM-2026-09-12-5PM",
+      "seriesCode": "3D-5PM",
+      "drawDate": "2026-09-12",
+      "drawTime": "5PM",
+      "numbers": [
+        0,
+        6,
+        6
+      ],
+      "jackpot": 4500,
+      "winners": 107,
+      "sourceLabel": "PCSO Official Auto Sync",
+      "sourceUrl": "https://www.pcso.gov.ph/SearchLottoResult.aspx",
+      "status": "official"
+    },
+    {
+      "id": "2D-9PM-2026-09-12-9PM",
+      "seriesCode": "2D-9PM",
+      "drawDate": "2026-09-12",
+      "drawTime": "9PM",
+      "numbers": [
+        28,
+        3
+      ],
+      "jackpot": 4000,
+      "winners": 215,
+      "sourceLabel": "PCSO Official Auto Sync",
+      "sourceUrl": "https://www.pcso.gov.ph/SearchLottoResult.aspx",
+      "status": "official"
+    },
+    {
+      "id": "3D-9PM-2026-09-12-9PM",
+      "seriesCode": "3D-9PM",
+      "drawDate": "2026-09-12",
+      "drawTime": "9PM",
+      "numbers": [
+        6,
+        4,
+        3
+      ],
+      "jackpot": 4500,
+      "winners": 141,
+      "sourceLabel": "PCSO Official Auto Sync",
+      "sourceUrl": "https://www.pcso.gov.ph/SearchLottoResult.aspx",
+      "status": "official"
+    },
+    {
+      "id": "6-42-2026-09-12-9PM",
+      "seriesCode": "6-42",
+      "drawDate": "2026-09-12",
+      "drawTime": "9PM",
+      "numbers": [
+        39,
+        10,
+        26,
+        30,
+        9,
+        29
+      ],
+      "jackpot": 38496341.99,
+      "winners": 0,
+      "sourceLabel": "PCSO Official Auto Sync",
+      "sourceUrl": "https://www.pcso.gov.ph/SearchLottoResult.aspx",
+      "status": "official"
+    },
+    {
+      "id": "6-55-2026-09-12-9PM",
+      "seriesCode": "6-55",
+      "drawDate": "2026-09-12",
+      "drawTime": "9PM",
+      "numbers": [
+        25,
+        5,
+        37,
+        23,
+        43,
+        51
+      ],
+      "jackpot": 192257410.83,
+      "winners": 0,
+      "sourceLabel": "PCSO Official Auto Sync",
+      "sourceUrl": "https://www.pcso.gov.ph/SearchLottoResult.aspx",
+      "status": "official"
+    },
+    {
+      "id": "6D-2026-09-12-9PM",
+      "seriesCode": "6D",
+      "drawDate": "2026-09-12",
+      "drawTime": "9PM",
+      "numbers": [
+        1,
+        9,
+        8,
+        5,
+        7,
+        3
+      ],
+      "jackpot": 2705783.4,
       "winners": 0,
       "sourceLabel": "PCSO Official Auto Sync",
       "sourceUrl": "https://www.pcso.gov.ph/SearchLottoResult.aspx",
