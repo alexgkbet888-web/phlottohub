@@ -1,7 +1,7 @@
 {
   "source": "PCSO Search Lotto Draw Result by Date",
   "sourceUrl": "https://www.pcso.gov.ph/SearchLottoResult.aspx",
-  "updatedAt": "2026-11-02T15:35:56.341Z",
+  "updatedAt": "2026-11-03T14:01:27.698Z",
   "records": [
     {
       "id": "2D-2PM-2026-06-05-2PM",
@@ -22499,6 +22499,175 @@
         48
       ],
       "jackpot": 326053355.61,
+      "winners": 0,
+      "sourceLabel": "PCSO Official Auto Sync",
+      "sourceUrl": "https://www.pcso.gov.ph/SearchLottoResult.aspx",
+      "status": "official"
+    },
+    {
+      "id": "2D-2PM-2026-11-03-2PM",
+      "seriesCode": "2D-2PM",
+      "drawDate": "2026-11-03",
+      "drawTime": "2PM",
+      "numbers": [
+        15,
+        5
+      ],
+      "jackpot": 4000,
+      "winners": 710,
+      "sourceLabel": "PCSO Official Auto Sync",
+      "sourceUrl": "https://www.pcso.gov.ph/SearchLottoResult.aspx",
+      "status": "official"
+    },
+    {
+      "id": "3D-2PM-2026-11-03-2PM",
+      "seriesCode": "3D-2PM",
+      "drawDate": "2026-11-03",
+      "drawTime": "2PM",
+      "numbers": [
+        9,
+        7,
+        1
+      ],
+      "jackpot": 4500,
+      "winners": 259,
+      "sourceLabel": "PCSO Official Auto Sync",
+      "sourceUrl": "https://www.pcso.gov.ph/SearchLottoResult.aspx",
+      "status": "official"
+    },
+    {
+      "id": "2D-5PM-2026-11-03-5PM",
+      "seriesCode": "2D-5PM",
+      "drawDate": "2026-11-03",
+      "drawTime": "5PM",
+      "numbers": [
+        12,
+        28
+      ],
+      "jackpot": 4000,
+      "winners": 292,
+      "sourceLabel": "PCSO Official Auto Sync",
+      "sourceUrl": "https://www.pcso.gov.ph/SearchLottoResult.aspx",
+      "status": "official"
+    },
+    {
+      "id": "3D-5PM-2026-11-03-5PM",
+      "seriesCode": "3D-5PM",
+      "drawDate": "2026-11-03",
+      "drawTime": "5PM",
+      "numbers": [
+        3,
+        7,
+        0
+      ],
+      "jackpot": 4500,
+      "winners": 102,
+      "sourceLabel": "PCSO Official Auto Sync",
+      "sourceUrl": "https://www.pcso.gov.ph/SearchLottoResult.aspx",
+      "status": "official"
+    },
+    {
+      "id": "2D-9PM-2026-11-03-9PM",
+      "seriesCode": "2D-9PM",
+      "drawDate": "2026-11-03",
+      "drawTime": "9PM",
+      "numbers": [
+        1,
+        28
+      ],
+      "jackpot": 4000,
+      "winners": 554,
+      "sourceLabel": "PCSO Official Auto Sync",
+      "sourceUrl": "https://www.pcso.gov.ph/SearchLottoResult.aspx",
+      "status": "official"
+    },
+    {
+      "id": "3D-9PM-2026-11-03-9PM",
+      "seriesCode": "3D-9PM",
+      "drawDate": "2026-11-03",
+      "drawTime": "9PM",
+      "numbers": [
+        4,
+        1,
+        6
+      ],
+      "jackpot": 4500,
+      "winners": 493,
+      "sourceLabel": "PCSO Official Auto Sync",
+      "sourceUrl": "https://www.pcso.gov.ph/SearchLottoResult.aspx",
+      "status": "official"
+    },
+    {
+      "id": "6-42-2026-11-03-9PM",
+      "seriesCode": "6-42",
+      "drawDate": "2026-11-03",
+      "drawTime": "9PM",
+      "numbers": [
+        35,
+        41,
+        8,
+        28,
+        19,
+        27
+      ],
+      "jackpot": 10000000,
+      "winners": 0,
+      "sourceLabel": "PCSO Official Auto Sync",
+      "sourceUrl": "https://www.pcso.gov.ph/SearchLottoResult.aspx",
+      "status": "official"
+    },
+    {
+      "id": "6-49-2026-11-03-9PM",
+      "seriesCode": "6-49",
+      "drawDate": "2026-11-03",
+      "drawTime": "9PM",
+      "numbers": [
+        22,
+        8,
+        19,
+        36,
+        20,
+        44
+      ],
+      "jackpot": 82569686.42,
+      "winners": 0,
+      "sourceLabel": "PCSO Official Auto Sync",
+      "sourceUrl": "https://www.pcso.gov.ph/SearchLottoResult.aspx",
+      "status": "official"
+    },
+    {
+      "id": "6-58-2026-11-03-9PM",
+      "seriesCode": "6-58",
+      "drawDate": "2026-11-03",
+      "drawTime": "9PM",
+      "numbers": [
+        16,
+        55,
+        1,
+        6,
+        27,
+        14
+      ],
+      "jackpot": 478298684.14,
+      "winners": 0,
+      "sourceLabel": "PCSO Official Auto Sync",
+      "sourceUrl": "https://www.pcso.gov.ph/SearchLottoResult.aspx",
+      "status": "official"
+    },
+    {
+      "id": "6D-2026-11-03-9PM",
+      "seriesCode": "6D",
+      "drawDate": "2026-11-03",
+      "drawTime": "9PM",
+      "numbers": [
+        8,
+        7,
+        3,
+        2,
+        8,
+        9
+      ],
+      "jackpot": 5009757.36,
       "winners": 0,
       "sourceLabel": "PCSO Official Auto Sync",
       "sourceUrl": "https://www.pcso.gov.ph/SearchLottoResult.aspx",
